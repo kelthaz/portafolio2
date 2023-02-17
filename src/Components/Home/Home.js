@@ -1,30 +1,54 @@
 import './Home.css'
-import { useState } from "react";
-import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import TabContext from '@mui/lab/TabContext';
-import TabList from '@mui/lab/TabList';
-import TabPanel from '@mui/lab/TabPanel';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+
+// import MenuIcon from '@mui/icons-material/Menu';
 
 const Home = () => {
-    const [value, setValue] = useState('1');
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-      };
+   
     return (
         <>
-            <TabContext value={value}>
-  <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-    <TabList onChange={handleChange} aria-label="lab API tabs example">
-      <Tab label="Item One" value="1" />
-      <Tab label="Item Two" value="2" />
-      <Tab label="Item Three" value="3" />
-    </TabList>
-  </Box>
-  <TabPanel value="1">Item One</TabPanel>
-  <TabPanel value="2">Item Two</TabPanel>
-  <TabPanel value="3">Item Three</TabPanel>
-</TabContext>
+        <Box sx={{ flexGrow: 1 }} style={{ background: '#1d1d1d' }}>
+            <Grid container >
+              <Grid item mt={{xs:4, md:4}}  mx={{xs:4}}  xs={12} md={6}>
+                  <Typography variant="h4"  color={'white'}>
+                    Hola, Mi nombre es David Prado, y soy un desarrollador full-stack
+                  </Typography>
+              </Grid>
+              <Grid item  mt={{xs:4, md:4}}  mx={{xs:4}}  md={8}>
+                  <Typography variant="body" color={'white'}>
+                    Tecnologias para el Front: React.js, Vue.js.
+                  </Typography>
+              </Grid>
+              <Grid item mt={{xs:4, md:4}}  mx={{xs:4}} ml={{xs:6, md:4}} md={8}>
+                  <Button variant="outlined" style={{     border: '1px solid #0afdd7',color: "#0afdd7"}}>
+                    Contactame!
+                  </Button>
+              </Grid>
+              <Grid container mt={12} ml={{xs:4, md: 4}} mb={12}>
+                <Grid item md={12}>
+                  <Typography variant="h2" color={'#0afdd7'}>
+                    Mi portafolio
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Grid md={12} mr={{xs:3}}>
+                    <Typography variant="body" color={'white'}>
+                      A continuacion les dejare un link donde podran visualizar algunos de mis trabajos realizados en la 
+                      parte del frontend.
+                    </Typography>
+                  </Grid>
+                  <Grid mt={4} md={12}>
+                    <Button variant="outlined" style={{     border: '1px solid #0afdd7',color: "#0afdd7"}}>
+                      Ver los proyectos
+                    </Button>
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Grid>
+        </Box>
         </>
     )
 }
