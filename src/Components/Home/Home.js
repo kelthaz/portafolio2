@@ -70,8 +70,8 @@ const Home = () => {
                       Ver los proyectos
                     </Button>
                   </Grid>
-                  <Grid mt={4} xs={6} md={6}>
-                  <ImageList sx={{width: 800,height: 300}} cols={3} rowHeight={210} >
+                  <Grid mt={4} xs={12} md={12}>
+                  <ImageList sx={{ width:'40% !important', height: '100% !important'}} cols={1}>
                       {itemData.map((item) => (
                         <ImageListItem key={item.img}>
                             <img
@@ -91,28 +91,36 @@ const Home = () => {
                   </Grid>
                 </Grid>
               </Grid>
-              <Grid container  ml={{xs:4, md: 4}} mb={12}>
+              <Grid container ml={{xs:4, md: 4}} mb={12} mr={{xs:3,md:0}}>
                 <Grid item md={12}>
                   <Typography mb={4} variant="h2" color={'#0afdd7'}>
                     Las tecnologias utilizadas en mi experiencia
                   </Typography>
-
-                  <Button mr={4 } variant="outlined" style={{  marginRight: '20px',   border: '1px solid #0afdd7',color: "#0afdd7"}}>
-                    React.js
-                  </Button>
-                  <Button  mr={2} variant="outlined" style={{   marginRight: '20px',  border: '1px solid #0afdd7',color: "#0afdd7"}}>
-                    Vue.js
-                  </Button>
-                  <Button variant="outlined" style={{  marginRight: '20px',   border: '1px solid #0afdd7',color: "#0afdd7"}}>
-                    Node.js
-                  </Button>
-                  <Button variant="outlined" style={{     border: '1px solid #0afdd7',color: "#0afdd7"}}>
-                   Python
-                  </Button>
-
+                  <Grid container >
+                    <Grid item sx={{xs:3, md:1}} mr={{xs:1, md:2}}>
+                      <Button mr={4 } pb={{xs:4, md: 0}}  variant="outlined" style={{  marginRight: '20px',   border: '1px solid #0afdd7',color: "#0afdd7"}}>
+                        React.js
+                      </Button>
+                    </Grid>
+                    <Grid item sx={{xs:3, md:1}} mr={{xs:0, md:2}}>
+                      <Button  mr={2} variant="outlined" style={{   marginRight: '20px',  border: '1px solid #0afdd7',color: "#0afdd7"}}>
+                        Vue.js
+                      </Button>
+                    </Grid>
+                    <Grid item sx={{xs:3, md:1}} mr={{xs:1, md:2}}>
+                      <Button variant="outlined" style={{  marginRight: '20px',   border: '1px solid #0afdd7',color: "#0afdd7"}}>
+                        Node.js
+                      </Button>
+                    </Grid>
+                    <Grid item md={3} pt={{xs:4, md: 0}}>
+                      <Button variant="outlined" style={{     border: '1px solid #0afdd7',color: "#0afdd7"}}>
+                      Python
+                      </Button>
+                    </Grid>
+                  </Grid>
                 </Grid>
               </Grid>
-              <Grid className='message' container spacing={2} >
+              <Grid container ml={{xs:2, md: 4}} mr={{xs:3,md:0}} spacing={2} >
                     <Grid  item  xs={12} md={12} >
                         <Grid item md={12}>
                             <Typography mb={4} variant="h2" color={'#0afdd7'}>
@@ -122,31 +130,32 @@ const Home = () => {
                               ¿Tinenes una pregunta o propuesta, o solo quieres salidar? Adelante
                             </Typography>
                         </Grid >
-                        <Grid container  md={12}>
-                            <Grid mt={4} xs={6} md={4} item>
+                        <Grid container md={10} style={{ background: 'gray',
+                                      borderRadius: '20px'}}>
+                            <Grid mt={4} xs={6} mr={1} md={3} mb={4} item  ml={2}>
                                 <TextField
                                     id="outlined-error"
                                     label="Su nombre"
-                                    color="success"
-                                    // style={{ color: "white"}}
                                 />
                             </Grid>
-                            <Grid mt={4} md={4} item>
+                            <Grid mt={4} md={3} mr={1}  ml={{xs:2, md:0}} item>
                                 <TextField
                                     id="outlined-error-helper-text"
                                     label="Direccion de correo electronico"
                                 />
                             </Grid>
-                            <Grid mt={4} md={4} item>
+                            <Grid mt={4} md={3} ml={{xs:2, md:0}} mb={{xs:4, md: 0}} item>
                                 <TextField
                                     id="outlined-error"
                                     label="Tu mensaje"
                                 />
                             </Grid>
                         </Grid>
-                        <Grid mt={6} item>
-                            <a className="button button3" href='https://farmadomicilios.epssura.com/login' target="_blank" rel="noreferrer">Enviar mensaje</a>
-                        </Grid>
+                        <Grid mt={6} mb={4} item>
+                          <Button variant="outlined" style={{     border: '1px solid #0afdd7',color: "#0afdd7"}}>
+                            Enviar Mensaje
+                          </Button>
+                      </Grid>
                     </Grid>
                 </Grid>
             </Grid>
